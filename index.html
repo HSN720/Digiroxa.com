@@ -3,12 +3,16 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Digiroxa | Premium Digital Marketing Agency</title>
+  <title>Digiroxa | Performance Marketing Agency</title>
   <meta
     name="description"
-    content="Digiroxa helps brands grow with Meta Ads, Google Ads, TikTok Ads, SEO, lead generation, conversion optimization, and digital growth strategy."
+    content="Digiroxa is a performance-driven digital marketing agency helping businesses turn clicks into clients with ads, SEO, lead generation, and conversion optimization."
   />
   <script src="https://cdn.tailwindcss.com"></script>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+  />
   <script>
     tailwind.config = {
       theme: {
@@ -17,38 +21,31 @@
             primary: "#1D4ED8",
             accent: "#F59E0B",
             surface: "#F3F4F6",
-            ink: "#0F172A"
+            ink: "#0F172A",
           },
           boxShadow: {
-            premium: "0 20px 60px rgba(29,78,216,0.16)",
-            soft: "0 12px 40px rgba(15,23,42,0.08)"
+            premium: "0 24px 80px rgba(29,78,216,0.14)",
+            soft: "0 12px 40px rgba(15,23,42,0.08)",
           },
-          keyframes: {
-            floaty: {
-              "0%, 100%": { transform: "translateY(0px)" },
-              "50%": { transform: "translateY(-8px)" }
-            }
-          },
-          animation: {
-            floaty: "floaty 6s ease-in-out infinite"
-          }
-        }
-      }
-    }
+        },
+      },
+    };
   </script>
   <style>
-    html { scroll-behavior: smooth; }
+    html {
+      scroll-behavior: smooth;
+    }
     body {
       background:
-        radial-gradient(circle at top left, rgba(29,78,216,0.10), transparent 28%),
-        radial-gradient(circle at top right, rgba(245,158,11,0.12), transparent 24%),
+        radial-gradient(circle at top left, rgba(29,78,216,0.10), transparent 24%),
+        radial-gradient(circle at top right, rgba(245,158,11,0.12), transparent 20%),
         #F3F4F6;
     }
     .glass {
-      background: rgba(255,255,255,0.72);
+      background: rgba(255, 255, 255, 0.78);
       backdrop-filter: blur(16px);
       -webkit-backdrop-filter: blur(16px);
-      border: 1px solid rgba(255,255,255,0.7);
+      border: 1px solid rgba(255, 255, 255, 0.72);
     }
     .grid-bg {
       background-image:
@@ -62,379 +59,517 @@
       background-clip: text;
       color: transparent;
     }
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity .7s ease, transform .7s ease;
+    }
+    .reveal.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
   </style>
 </head>
-<body class="text-ink antialiased selection:bg-primary selection:text-white">
-  <div class="fixed inset-0 -z-10 grid-bg opacity-70"></div>
+<body class="bg-surface text-ink antialiased selection:bg-primary selection:text-white">
+  <div class="pointer-events-none fixed inset-0 -z-10 grid-bg opacity-70"></div>
 
   <header class="sticky top-0 z-50 border-b border-slate-200/80 bg-white/80 backdrop-blur-xl">
     <div class="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8">
       <a href="#home" class="flex items-center gap-3">
-        <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-primary text-white shadow-premium">
-          <span class="text-lg font-black">DR</span>
+        <div class="flex h-11 w-11 items-center justify-center rounded-2xl bg-primary text-white shadow-premium">
+          <span class="text-lg font-black">D</span>
         </div>
-        <div>
-          <p class="text-lg font-bold tracking-wide">Digiroxa</p>
-          <p class="text-[11px] uppercase tracking-[0.32em] text-slate-500">Digital Marketing Agency</p>
-        </div>
+        <span class="text-xl font-bold tracking-wide">Digiroxa</span>
       </a>
 
       <nav class="hidden items-center gap-8 md:flex">
+        <a href="#home" class="text-sm font-medium text-slate-600 transition hover:text-primary">Home</a>
         <a href="#services" class="text-sm font-medium text-slate-600 transition hover:text-primary">Services</a>
-        <a href="#package" class="text-sm font-medium text-slate-600 transition hover:text-primary">Package</a>
-        <a href="#about" class="text-sm font-medium text-slate-600 transition hover:text-primary">About</a>
+        <a href="#results" class="text-sm font-medium text-slate-600 transition hover:text-primary">Results</a>
+        <a href="#reviews" class="text-sm font-medium text-slate-600 transition hover:text-primary">Reviews</a>
         <a href="#contact" class="text-sm font-medium text-slate-600 transition hover:text-primary">Contact</a>
       </nav>
 
-      <div class="hidden items-center gap-3 md:flex">
-        <a href="tel:0527923850" class="rounded-full border border-slate-200 bg-white px-4 py-2.5 text-sm font-semibold text-slate-700 transition hover:border-primary hover:text-primary">
-          0527923850
-        </a>
-        <a href="#contact" class="rounded-full bg-primary px-5 py-3 text-sm font-semibold text-white shadow-premium transition duration-300 hover:-translate-y-0.5 hover:bg-blue-700">
-          Contact an Agent
+      <div class="hidden md:block">
+        <a href="#audit" class="rounded-full bg-primary px-5 py-3 text-sm font-semibold text-white shadow-premium transition duration-300 hover:-translate-y-0.5 hover:bg-blue-700">
+          Free Audit
         </a>
       </div>
 
       <button id="menuBtn" class="inline-flex h-11 w-11 items-center justify-center rounded-xl border border-slate-200 bg-white md:hidden" aria-label="Open Menu">
-        <svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M4 7h16M4 12h16M4 17h16"></path>
-        </svg>
+        <i class="fa-solid fa-bars"></i>
       </button>
     </div>
 
     <div id="mobileMenu" class="hidden border-t border-slate-200 bg-white md:hidden">
       <div class="mx-auto flex max-w-7xl flex-col gap-4 px-6 py-5">
+        <a href="#home" class="text-slate-700">Home</a>
         <a href="#services" class="text-slate-700">Services</a>
-        <a href="#package" class="text-slate-700">Package</a>
-        <a href="#about" class="text-slate-700">About</a>
+        <a href="#results" class="text-slate-700">Results</a>
+        <a href="#reviews" class="text-slate-700">Reviews</a>
         <a href="#contact" class="text-slate-700">Contact</a>
-        <a href="#contact" class="inline-flex w-fit rounded-full bg-primary px-5 py-3 text-sm font-semibold text-white">Contact an Agent</a>
+        <a href="#audit" class="inline-flex w-fit rounded-full bg-primary px-5 py-3 text-sm font-semibold text-white">Free Audit</a>
       </div>
     </div>
   </header>
 
   <main id="home">
     <section class="relative overflow-hidden">
-      <div class="mx-auto grid max-w-7xl items-center gap-16 px-6 py-20 lg:grid-cols-2 lg:px-8 lg:py-28">
-        <div>
+      <div class="mx-auto grid max-w-7xl items-center gap-14 px-6 py-20 lg:grid-cols-2 lg:px-8 lg:py-28">
+        <div class="reveal">
           <div class="mb-6 inline-flex items-center gap-2 rounded-full border border-blue-100 bg-white/80 px-4 py-2 text-xs font-semibold uppercase tracking-[0.28em] text-primary shadow-soft">
-            Premium Growth Systems
+            Performance Marketing Agency
           </div>
 
           <h1 class="max-w-3xl text-5xl font-black leading-tight text-slate-900 sm:text-6xl lg:text-7xl">
-            Grow your business with a
-            <span class="gradient-text">premium digital marketing engine</span>
+            We Turn <span class="gradient-text">Clicks Into Clients</span>
           </h1>
 
           <p class="mt-6 max-w-2xl text-lg leading-8 text-slate-600 sm:text-xl">
-            Digiroxa helps ambitious brands scale with world-class Meta Ads, Google Ads, TikTok Ads, SEO, lead generation, and conversion-focused strategy.
+            Performance-driven marketing that generates real leads and revenue.
           </p>
 
           <div class="mt-10 flex flex-col gap-4 sm:flex-row">
-            <a href="#contact" class="inline-flex items-center justify-center rounded-full bg-primary px-7 py-4 text-sm font-semibold text-white shadow-premium transition duration-300 hover:-translate-y-1 hover:bg-blue-700">
-              Book a Strategy Call
+            <a href="#audit" class="inline-flex items-center justify-center rounded-full bg-primary px-7 py-4 text-sm font-semibold text-white shadow-premium transition duration-300 hover:-translate-y-1 hover:bg-blue-700">
+              Get Free Audit
             </a>
-            <a href="#services" class="inline-flex items-center justify-center rounded-full border border-slate-300 bg-white px-7 py-4 text-sm font-semibold text-slate-800 transition duration-300 hover:-translate-y-1 hover:border-accent hover:text-accent">
-              Explore Services
+            <a href="#contact" class="inline-flex items-center justify-center rounded-full border border-slate-300 bg-white px-7 py-4 text-sm font-semibold text-slate-800 transition duration-300 hover:-translate-y-1 hover:border-accent hover:text-accent">
+              Talk to an Agent
             </a>
-          </div>
-
-          <div class="mt-12 grid max-w-xl grid-cols-3 gap-4">
-            <div class="glass rounded-2xl p-4 shadow-soft">
-              <p class="text-3xl font-black text-primary">7</p>
-              <p class="mt-2 text-sm text-slate-600">Core growth services</p>
-            </div>
-            <div class="glass rounded-2xl p-4 shadow-soft">
-              <p class="text-3xl font-black text-accent">ROI</p>
-              <p class="mt-2 text-sm text-slate-600">Strategy built around results</p>
-            </div>
-            <div class="glass rounded-2xl p-4 shadow-soft">
-              <p class="text-3xl font-black text-primary">24/7</p>
-              <p class="mt-2 text-sm text-slate-600">Digital presence that keeps selling</p>
-            </div>
           </div>
         </div>
 
-        <div class="relative">
-          <div class="absolute -left-8 top-10 h-40 w-40 rounded-full bg-blue-300/40 blur-3xl"></div>
-          <div class="absolute -bottom-8 -right-6 h-40 w-40 rounded-full bg-amber-300/40 blur-3xl"></div>
-
-          <div class="glass relative rounded-[2rem] p-5 shadow-premium">
-            <div class="rounded-[1.6rem] bg-slate-900 p-6 text-white">
-              <div class="flex items-start justify-between gap-4">
-                <div>
-                  <p class="text-sm uppercase tracking-[0.3em] text-white/45">Digiroxa Dashboard</p>
-                  <h2 class="mt-2 text-2xl font-bold">Built to look elite and convert hard</h2>
-                </div>
-                <div class="rounded-full border border-amber-400/30 bg-amber-400/10 px-3 py-1 text-xs font-semibold text-amber-300">
-                  Premium
-                </div>
-              </div>
-
-              <div class="mt-6 grid gap-4 sm:grid-cols-2">
-                <div class="rounded-2xl border border-white/10 bg-white/5 p-5">
-                  <p class="text-sm text-white/55">Campaign Performance</p>
-                  <p class="mt-4 text-4xl font-black">+214%</p>
-                  <p class="mt-2 text-sm text-emerald-400">Qualified leads potential</p>
-                </div>
-                <div class="rounded-2xl border border-white/10 bg-white/5 p-5">
-                  <p class="text-sm text-white/55">Cost Efficiency</p>
-                  <p class="mt-4 text-4xl font-black">-38%</p>
-                  <p class="mt-2 text-sm text-emerald-400">Smarter acquisition structure</p>
-                </div>
-              </div>
-
-              <div class="mt-4 rounded-2xl border border-white/10 bg-white/5 p-5">
-                <p class="text-sm text-white/55">Stack</p>
-                <p class="mt-2 text-xl font-bold">Paid ads, SEO, CRO, and strategy working as one system.</p>
-              </div>
+        <div class="reveal">
+          <div class="glass rounded-[2rem] p-6 shadow-premium sm:p-8">
+            <div class="mb-6">
+              <p class="text-sm font-semibold uppercase tracking-[0.3em] text-primary">Free Audit Form</p>
+              <h2 class="mt-3 text-2xl font-bold text-slate-900">Get a custom growth review</h2>
             </div>
-          </div>
 
-          <div class="absolute -bottom-6 left-8 hidden animate-floaty rounded-2xl bg-white px-4 py-3 shadow-soft md:block">
-            <p class="text-xs uppercase tracking-[0.25em] text-slate-500">Agency feel</p>
-            <p class="mt-1 text-sm font-semibold text-slate-900">$10k website energy</p>
+            <form id="heroForm" class="space-y-4" novalidate>
+              <div>
+                <label class="mb-2 block text-sm font-medium text-slate-700">Name</label>
+                <input type="text" name="name" class="w-full rounded-2xl border border-slate-200 bg-white px-4 py-3 outline-none transition focus:border-primary" placeholder="Your name" />
+              </div>
+              <div>
+                <label class="mb-2 block text-sm font-medium text-slate-700">Email</label>
+                <input type="email" name="email" class="w-full rounded-2xl border border-slate-200 bg-white px-4 py-3 outline-none transition focus:border-primary" placeholder="you@example.com" />
+              </div>
+              <div>
+                <label class="mb-2 block text-sm font-medium text-slate-700">Business Name</label>
+                <input type="text" name="business" class="w-full rounded-2xl border border-slate-200 bg-white px-4 py-3 outline-none transition focus:border-primary" placeholder="Your business" />
+              </div>
+              <button type="submit" class="w-full rounded-full bg-primary px-6 py-4 text-sm font-semibold text-white shadow-premium transition duration-300 hover:-translate-y-1 hover:bg-blue-700">
+                Get Free Audit
+              </button>
+              <p class="form-message hidden rounded-2xl bg-emerald-50 px-4 py-3 text-sm text-emerald-700"></p>
+            </form>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="mx-auto max-w-7xl px-6 pb-8 lg:px-8">
+      <div class="reveal grid gap-4 rounded-[2rem] bg-slate-900 p-6 text-white shadow-premium md:grid-cols-3 md:p-8">
+        <div class="rounded-2xl border border-white/10 bg-white/5 p-5">
+          <p class="text-3xl font-black text-accent">100+</p>
+          <p class="mt-2 text-sm text-white/75">Leads Generated</p>
+        </div>
+        <div class="rounded-2xl border border-white/10 bg-white/5 p-5">
+          <p class="text-3xl font-black text-accent">High ROI</p>
+          <p class="mt-2 text-sm text-white/75">Campaigns built around efficiency and scale</p>
+        </div>
+        <div class="rounded-2xl border border-white/10 bg-white/5 p-5">
+          <p class="text-3xl font-black text-accent">Trusted</p>
+          <p class="mt-2 text-sm text-white/75">By growing businesses focused on results</p>
         </div>
       </div>
     </section>
 
     <section id="services" class="mx-auto max-w-7xl px-6 py-20 lg:px-8">
-      <div class="mb-12 flex flex-col gap-5 md:flex-row md:items-end md:justify-between">
+      <div class="reveal mb-12 flex flex-col gap-5 md:flex-row md:items-end md:justify-between">
         <div>
           <p class="text-sm font-semibold uppercase tracking-[0.35em] text-accent">Services</p>
-          <h2 class="mt-3 text-3xl font-black text-slate-900 sm:text-4xl">Everything you need to scale properly</h2>
+          <h2 class="mt-3 text-3xl font-black text-slate-900 sm:text-4xl">The growth stack behind strong campaigns</h2>
         </div>
         <p class="max-w-2xl text-slate-600">
-          Digiroxa blends premium presentation with high-performance execution across every stage of digital growth.
+          Every service is built to attract qualified traffic, improve conversions, and move your business forward.
         </p>
       </div>
 
       <div class="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
-        <article class="glass rounded-3xl p-6 shadow-soft transition duration-300 hover:-translate-y-2 hover:shadow-premium">
+        <article class="reveal glass rounded-3xl p-6 shadow-soft transition duration-300 hover:-translate-y-2 hover:shadow-premium">
           <div class="mb-5 flex h-14 w-14 items-center justify-center rounded-2xl bg-blue-500/10 text-blue-600">
-            <svg class="h-7 w-7" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M12.89 11.2a2.57 2.57 0 1 0 0-5.14 2.57 2.57 0 0 0 0 5.14Zm-5.72 6.71v-4.42c0-.97.79-1.76 1.76-1.76h2.27l1.54 2.35 1.55-2.35h2.27c.97 0 1.76.79 1.76 1.76v4.42h-2.26v-3.57h-1.47l-1.85 2.79-1.84-2.79H9.43v3.57Z"/>
-            </svg>
+            <i class="fa-brands fa-meta text-2xl"></i>
           </div>
           <h3 class="text-xl font-bold text-slate-900">Meta Ads</h3>
-          <p class="mt-3 text-sm leading-7 text-slate-600">Facebook and Instagram campaigns engineered for stronger creative, cleaner targeting, and better return.</p>
+          <p class="mt-3 text-sm leading-7 text-slate-600">Facebook and Instagram campaigns designed for reach, quality leads, and stronger ROAS.</p>
         </article>
 
-        <article class="glass rounded-3xl p-6 shadow-soft transition duration-300 hover:-translate-y-2 hover:shadow-premium">
+        <article class="reveal glass rounded-3xl p-6 shadow-soft transition duration-300 hover:-translate-y-2 hover:shadow-premium">
           <div class="mb-5 flex h-14 w-14 items-center justify-center rounded-2xl bg-red-500/10 text-red-500">
-            <svg class="h-7 w-7" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M12 10.3v3.4h4.86c-.2 1.1-.83 2.02-1.77 2.64v2.2h2.86c1.67-1.53 2.64-3.78 2.64-6.42 0-.61-.05-1.2-.16-1.78H12Z"/>
-              <path d="M12 21c2.43 0 4.47-.8 5.95-2.18l-2.86-2.2c-.79.53-1.8.84-3.09.84-2.38 0-4.39-1.61-5.11-3.77H3.94v2.31A9 9 0 0 0 12 21Z"/>
-              <path d="M6.89 13.69A5.4 5.4 0 0 1 6.6 12c0-.58.1-1.14.29-1.69V8H3.94A9 9 0 0 0 3 12c0 1.45.35 2.82.94 4l2.95-2.31Z"/>
-              <path d="M12 6.54c1.32 0 2.51.45 3.45 1.34l2.59-2.59C16.46 3.82 14.42 3 12 3a9 9 0 0 0-8.06 5l2.95 2.31c.72-2.16 2.73-3.77 5.11-3.77Z"/>
-            </svg>
+            <i class="fa-brands fa-google text-2xl"></i>
           </div>
           <h3 class="text-xl font-bold text-slate-900">Google Ads Management</h3>
-          <p class="mt-3 text-sm leading-7 text-slate-600">Capture high-intent buyers exactly when they are searching for your offer.</p>
+          <p class="mt-3 text-sm leading-7 text-slate-600">Capture high-intent searches and turn active demand into leads and sales.</p>
         </article>
 
-        <article class="glass rounded-3xl p-6 shadow-soft transition duration-300 hover:-translate-y-2 hover:shadow-premium">
+        <article class="reveal glass rounded-3xl p-6 shadow-soft transition duration-300 hover:-translate-y-2 hover:shadow-premium">
           <div class="mb-5 flex h-14 w-14 items-center justify-center rounded-2xl bg-pink-500/10 text-pink-500">
-            <svg class="h-7 w-7" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M16.61 5.05c1.18.84 2.6 1.34 4.13 1.37v3.12c-2.25-.07-4.39-.74-6.18-1.95v5.53c0 3.33-2.71 6.04-6.04 6.04S2.48 16.45 2.48 13.12 5.2 7.08 8.52 7.08c.37 0 .73.03 1.08.1v3.19a2.88 2.88 0 0 0-1.08-.21 2.96 2.96 0 1 0 0 5.92 2.96 2.96 0 0 0 2.96-2.96V3h3.13c.03.72.28 1.41.7 2.05.35.53.81 1 1.3 1.38Z"/>
-            </svg>
+            <i class="fa-brands fa-tiktok text-2xl"></i>
           </div>
           <h3 class="text-xl font-bold text-slate-900">TikTok Ads</h3>
-          <p class="mt-3 text-sm leading-7 text-slate-600">Short-form campaigns designed to stop the scroll and turn attention into demand.</p>
+          <p class="mt-3 text-sm leading-7 text-slate-600">Short-form ad campaigns built to stop the scroll and drive action.</p>
         </article>
 
-        <article class="glass rounded-3xl p-6 shadow-soft transition duration-300 hover:-translate-y-2 hover:shadow-premium">
+        <article class="reveal glass rounded-3xl p-6 shadow-soft transition duration-300 hover:-translate-y-2 hover:shadow-premium">
           <div class="mb-5 flex h-14 w-14 items-center justify-center rounded-2xl bg-emerald-500/10 text-emerald-600">
-            <svg class="h-7 w-7" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M10 18a8 8 0 1 1 5.293-14H22v2h-4.869A7.96 7.96 0 0 1 18 10a8 8 0 0 1-8 8Zm0-2a6 6 0 1 0 0-12 6 6 0 0 0 0 12Zm9.707 1.293 2 2-1.414 1.414-2-2 1.414-1.414Z"/>
-            </svg>
+            <i class="fa-solid fa-magnifying-glass-chart text-2xl"></i>
           </div>
           <h3 class="text-xl font-bold text-slate-900">SEO</h3>
-          <p class="mt-3 text-sm leading-7 text-slate-600">Build long-term search visibility, authority, and consistent inbound traffic.</p>
+          <p class="mt-3 text-sm leading-7 text-slate-600">Organic growth that builds rankings, authority, and long-term traffic.</p>
         </article>
 
-        <article class="glass rounded-3xl p-6 shadow-soft transition duration-300 hover:-translate-y-2 hover:shadow-premium">
+        <article class="reveal glass rounded-3xl p-6 shadow-soft transition duration-300 hover:-translate-y-2 hover:shadow-premium">
           <div class="mb-5 flex h-14 w-14 items-center justify-center rounded-2xl bg-amber-500/10 text-accent">
-            <svg class="h-7 w-7" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M4 6h16v3H4V6Zm2 5h12v7H6v-7Zm2 2v3h8v-3H8Z"/>
-            </svg>
+            <i class="fa-solid fa-bullseye text-2xl"></i>
           </div>
           <h3 class="text-xl font-bold text-slate-900">Lead Generation</h3>
-          <p class="mt-3 text-sm leading-7 text-slate-600">Funnels and messaging designed to attract qualified inquiries and real opportunities.</p>
+          <p class="mt-3 text-sm leading-7 text-slate-600">Funnels and ad systems focused on attracting qualified opportunities consistently.</p>
         </article>
 
-        <article class="glass rounded-3xl p-6 shadow-soft transition duration-300 hover:-translate-y-2 hover:shadow-premium">
+        <article class="reveal glass rounded-3xl p-6 shadow-soft transition duration-300 hover:-translate-y-2 hover:shadow-premium">
           <div class="mb-5 flex h-14 w-14 items-center justify-center rounded-2xl bg-violet-500/10 text-violet-600">
-            <svg class="h-7 w-7" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M3 5h18v4H3V5Zm2 6h14v8H5v-8Zm3 2v4h2v-4H8Zm4 0v4h2v-4h-2Z"/>
-            </svg>
+            <i class="fa-solid fa-chart-line text-2xl"></i>
           </div>
           <h3 class="text-xl font-bold text-slate-900">Conversion Optimization</h3>
-          <p class="mt-3 text-sm leading-7 text-slate-600">Improve landing pages, messaging, and journeys so more traffic becomes revenue.</p>
+          <p class="mt-3 text-sm leading-7 text-slate-600">Improve landing pages and user journeys so more traffic becomes customers.</p>
         </article>
 
-        <article class="glass rounded-3xl p-6 shadow-soft transition duration-300 hover:-translate-y-2 hover:shadow-premium">
+        <article class="reveal glass rounded-3xl p-6 shadow-soft transition duration-300 hover:-translate-y-2 hover:shadow-premium md:col-span-2 xl:col-span-1">
           <div class="mb-5 flex h-14 w-14 items-center justify-center rounded-2xl bg-sky-500/10 text-sky-600">
-            <svg class="h-7 w-7" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M13 3l8 8-8 8-1.41-1.41L17.17 12H3v-2h14.17l-5.58-5.59L13 3Z"/>
-            </svg>
+            <i class="fa-solid fa-rocket text-2xl"></i>
           </div>
           <h3 class="text-xl font-bold text-slate-900">Digital Growth Strategy</h3>
-          <p class="mt-3 text-sm leading-7 text-slate-600">A full-funnel roadmap connecting paid media, SEO, offers, and growth priorities.</p>
+          <p class="mt-3 text-sm leading-7 text-slate-600">A full-funnel roadmap connecting traffic, offers, messaging, and scale priorities.</p>
         </article>
       </div>
     </section>
 
-    <section id="package" class="mx-auto max-w-7xl px-6 py-20 lg:px-8">
-      <div class="mb-12 text-center">
-        <p class="text-sm font-semibold uppercase tracking-[0.35em] text-accent">Digiroxa Package</p>
-        <h2 class="mt-3 text-3xl font-black text-slate-900 sm:text-4xl">The all-in premium growth package</h2>
-        <p class="mx-auto mt-5 max-w-2xl text-slate-600">
-          One premium package that combines the most powerful channels into a single performance system.
-        </p>
-      </div>
+    <section class="mx-auto max-w-7xl px-6 py-20 lg:px-8">
+      <div class="reveal rounded-[2rem] bg-white p-8 shadow-soft sm:p-10">
+        <div class="mb-10 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
+          <div>
+            <p class="text-sm font-semibold uppercase tracking-[0.35em] text-accent">Benefits</p>
+            <h2 class="mt-3 text-3xl font-black text-slate-900 sm:text-4xl">What You Get</h2>
+          </div>
+          <p class="max-w-2xl text-slate-600">Clear outcomes from a strategy built around measurable growth.</p>
+        </div>
 
-      <div class="relative overflow-hidden rounded-[2rem] bg-slate-900 p-8 text-white shadow-premium sm:p-10 lg:p-12">
+        <div class="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+          <div class="rounded-3xl border border-slate-200 bg-slate-50 p-6 transition duration-300 hover:-translate-y-1 hover:border-primary">
+            <i class="fa-solid fa-user-check text-2xl text-primary"></i>
+            <h3 class="mt-4 text-xl font-bold">More qualified leads</h3>
+          </div>
+          <div class="rounded-3xl border border-slate-200 bg-slate-50 p-6 transition duration-300 hover:-translate-y-1 hover:border-primary">
+            <i class="fa-solid fa-coins text-2xl text-primary"></i>
+            <h3 class="mt-4 text-xl font-bold">Lower cost per acquisition</h3>
+          </div>
+          <div class="rounded-3xl border border-slate-200 bg-slate-50 p-6 transition duration-300 hover:-translate-y-1 hover:border-primary">
+            <i class="fa-solid fa-arrow-trend-up text-2xl text-primary"></i>
+            <h3 class="mt-4 text-xl font-bold">Scalable growth</h3>
+          </div>
+          <div class="rounded-3xl border border-slate-200 bg-slate-50 p-6 transition duration-300 hover:-translate-y-1 hover:border-primary">
+            <i class="fa-solid fa-chart-pie text-2xl text-primary"></i>
+            <h3 class="mt-4 text-xl font-bold">Data-driven decisions</h3>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="package" class="mx-auto max-w-7xl px-6 py-20 lg:px-8">
+      <div class="reveal relative overflow-hidden rounded-[2rem] bg-slate-900 p-8 text-white shadow-premium sm:p-10 lg:p-12">
         <div class="absolute right-0 top-0 h-40 w-40 rounded-full bg-primary/30 blur-3xl"></div>
         <div class="absolute bottom-0 left-0 h-40 w-40 rounded-full bg-accent/20 blur-3xl"></div>
 
         <div class="relative grid gap-10 lg:grid-cols-[1.1fr_0.9fr]">
           <div>
-            <div class="inline-flex rounded-full border border-amber-400/25 bg-amber-400/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.28em] text-amber-300">
-              Signature Package
-            </div>
-            <h3 class="mt-5 text-3xl font-black sm:text-4xl">Ads + SEO + Lead Growth, fully integrated</h3>
-            <p class="mt-5 max-w-2xl text-lg leading-8 text-white/70">
-              This is Digiroxa’s premium package for brands that want real scale. We combine Meta Ads, Google Ads, TikTok Ads, SEO, lead generation, and conversion optimization into one unified growth machine.
+            <p class="text-sm font-semibold uppercase tracking-[0.35em] text-amber-300">Digiroxa Package</p>
+            <h2 class="mt-4 text-3xl font-black sm:text-4xl">All-in-One Growth Package</h2>
+            <p class="mt-5 max-w-2xl text-lg leading-8 text-white/75">
+              Meta Ads, Google Ads, TikTok Ads, SEO, Lead Generation, Conversion Optimization, and Digital Growth Strategy in one complete system.
             </p>
-
-            <div class="mt-8 grid gap-4 sm:grid-cols-2">
-              <div class="rounded-2xl border border-white/10 bg-white/5 p-5">
-                <p class="font-semibold">Included Channels</p>
-                <p class="mt-2 text-sm text-white/65">Meta Ads, Google Ads, TikTok Ads, SEO, Lead Gen, CRO</p>
-              </div>
-              <div class="rounded-2xl border border-white/10 bg-white/5 p-5">
-                <p class="font-semibold">Best For</p>
-                <p class="mt-2 text-sm text-white/65">Brands ready to invest in a serious, multi-channel growth strategy</p>
-              </div>
-            </div>
+            <p class="mt-5 text-sm font-semibold uppercase tracking-[0.25em] text-amber-300">Custom Plans Available</p>
           </div>
 
           <div class="rounded-[1.75rem] border border-white/10 bg-white/5 p-6 sm:p-8">
-            <p class="text-sm uppercase tracking-[0.3em] text-white/45">Benefits</p>
-            <ul class="mt-6 space-y-4 text-white/85">
-              <li class="flex gap-3"><span class="mt-2 h-2.5 w-2.5 rounded-full bg-accent"></span>Premium positioning that makes the brand feel higher value</li>
-              <li class="flex gap-3"><span class="mt-2 h-2.5 w-2.5 rounded-full bg-accent"></span>Integrated paid and organic strategy instead of disconnected tactics</li>
-              <li class="flex gap-3"><span class="mt-2 h-2.5 w-2.5 rounded-full bg-accent"></span>Stronger lead quality with cleaner conversion paths</li>
-              <li class="flex gap-3"><span class="mt-2 h-2.5 w-2.5 rounded-full bg-accent"></span>More efficient acquisition through testing and optimization</li>
-              <li class="flex gap-3"><span class="mt-2 h-2.5 w-2.5 rounded-full bg-accent"></span>One agency partner managing the full growth stack</li>
-            </ul>
-
+            <div class="grid gap-3 text-sm text-white/85">
+              <div class="rounded-2xl border border-white/10 bg-white/5 p-4">Meta Ads</div>
+              <div class="rounded-2xl border border-white/10 bg-white/5 p-4">Google Ads Management</div>
+              <div class="rounded-2xl border border-white/10 bg-white/5 p-4">TikTok Ads</div>
+              <div class="rounded-2xl border border-white/10 bg-white/5 p-4">SEO</div>
+              <div class="rounded-2xl border border-white/10 bg-white/5 p-4">Lead Generation</div>
+              <div class="rounded-2xl border border-white/10 bg-white/5 p-4">Conversion Optimization</div>
+              <div class="rounded-2xl border border-white/10 bg-white/5 p-4">Digital Growth Strategy</div>
+            </div>
             <a href="#contact" class="mt-8 inline-flex w-full items-center justify-center rounded-full bg-accent px-6 py-4 text-sm font-semibold text-slate-900 transition duration-300 hover:-translate-y-1 hover:bg-amber-400">
-              Contact an Agent
+              View Full Package
             </a>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="about" class="mx-auto max-w-7xl px-6 py-20 lg:px-8">
-      <div class="grid gap-8 lg:grid-cols-[1.05fr_0.95fr]">
-        <div class="glass rounded-[2rem] p-8 shadow-soft sm:p-10">
-          <p class="text-sm font-semibold uppercase tracking-[0.35em] text-accent">About Digiroxa</p>
-          <h2 class="mt-4 text-3xl font-black text-slate-900 sm:text-4xl">Why Digiroxa feels different</h2>
-          <p class="mt-6 text-base leading-8 text-slate-600">
-            Digiroxa is designed for businesses that want more than generic marketing. We combine strategy, performance, design sensibility, and conversion thinking into one refined agency experience.
-          </p>
-          <p class="mt-5 text-base leading-8 text-slate-600">
-            The result is a brand presence that feels more premium, more credible, and more effective at turning traffic into customers.
-          </p>
+    <section id="results" class="mx-auto max-w-7xl px-6 py-20 lg:px-8">
+      <div class="reveal mb-12 flex flex-col gap-5 md:flex-row md:items-end md:justify-between">
+        <div>
+          <p class="text-sm font-semibold uppercase tracking-[0.35em] text-accent">Results</p>
+          <h2 class="mt-3 text-3xl font-black text-slate-900 sm:text-4xl">A dashboard view of performance</h2>
         </div>
+        <p class="max-w-2xl text-slate-600">Modern reporting focused on the numbers that matter most.</p>
+      </div>
 
-        <div class="grid gap-6">
-          <div class="glass rounded-[2rem] p-8 shadow-soft">
-            <p class="text-sm uppercase tracking-[0.3em] text-slate-500">What makes us unique</p>
-            <ul class="mt-6 space-y-4 text-slate-700">
-              <li class="flex gap-3"><span class="mt-2 h-2.5 w-2.5 rounded-full bg-primary"></span>Luxury-level visual presentation with performance focus</li>
-              <li class="flex gap-3"><span class="mt-2 h-2.5 w-2.5 rounded-full bg-primary"></span>Paid media and SEO connected into one growth system</li>
-              <li class="flex gap-3"><span class="mt-2 h-2.5 w-2.5 rounded-full bg-primary"></span>Clear, modern communication without agency clutter</li>
-              <li class="flex gap-3"><span class="mt-2 h-2.5 w-2.5 rounded-full bg-primary"></span>Strategy built around leads, conversions, and revenue</li>
-            </ul>
+      <div class="reveal rounded-[2rem] bg-white p-6 shadow-soft sm:p-8">
+        <div class="grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
+          <div class="grid gap-6 sm:grid-cols-3">
+            <div class="rounded-3xl border border-slate-200 bg-slate-50 p-6">
+              <p class="text-sm text-slate-500">Leads</p>
+              <p class="mt-3 text-4xl font-black text-primary">120+</p>
+            </div>
+            <div class="rounded-3xl border border-slate-200 bg-slate-50 p-6">
+              <p class="text-sm text-slate-500">Conversion Rate</p>
+              <p class="mt-3 text-4xl font-black text-primary">35%</p>
+            </div>
+            <div class="rounded-3xl border border-slate-200 bg-slate-50 p-6">
+              <p class="text-sm text-slate-500">ROI</p>
+              <p class="mt-3 text-4xl font-black text-primary">3.5x</p>
+            </div>
           </div>
 
-          <div class="grid gap-6 sm:grid-cols-2">
-            <div class="glass rounded-3xl p-6 shadow-soft">
-              <p class="text-3xl font-black text-primary">01</p>
-              <p class="mt-3 font-semibold text-slate-900">Authority first</p>
-              <p class="mt-2 text-sm leading-7 text-slate-600">We make your brand look stronger before scaling more traffic into it.</p>
+          <div class="rounded-[1.75rem] bg-slate-900 p-6 text-white">
+            <p class="text-sm uppercase tracking-[0.28em] text-white/45">Live Snapshot</p>
+            <div class="mt-6 space-y-4">
+              <div class="rounded-2xl border border-white/10 bg-white/5 p-4">
+                <div class="flex items-center justify-between text-sm">
+                  <span class="text-white/60">Qualified Leads</span>
+                  <span class="font-semibold text-emerald-400">+28%</span>
+                </div>
+                <div class="mt-3 h-2 rounded-full bg-white/10">
+                  <div class="h-2 w-[78%] rounded-full bg-accent"></div>
+                </div>
+              </div>
+              <div class="rounded-2xl border border-white/10 bg-white/5 p-4">
+                <div class="flex items-center justify-between text-sm">
+                  <span class="text-white/60">Cost Efficiency</span>
+                  <span class="font-semibold text-emerald-400">Improving</span>
+                </div>
+                <div class="mt-3 h-2 rounded-full bg-white/10">
+                  <div class="h-2 w-[62%] rounded-full bg-blue-400"></div>
+                </div>
+              </div>
+              <div class="rounded-2xl border border-white/10 bg-white/5 p-4">
+                <div class="flex items-center justify-between text-sm">
+                  <span class="text-white/60">Campaign Momentum</span>
+                  <span class="font-semibold text-emerald-400">Strong</span>
+                </div>
+                <div class="mt-3 h-2 rounded-full bg-white/10">
+                  <div class="h-2 w-[84%] rounded-full bg-emerald-400"></div>
+                </div>
+              </div>
             </div>
-            <div class="glass rounded-3xl p-6 shadow-soft">
-              <p class="text-3xl font-black text-accent">02</p>
-              <p class="mt-3 font-semibold text-slate-900">Growth second</p>
-              <p class="mt-2 text-sm leading-7 text-slate-600">Once positioned well, we build the systems that drive results.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="mx-auto max-w-7xl px-6 py-20 lg:px-8">
+      <div class="reveal rounded-[2rem] bg-white p-8 shadow-soft sm:p-10">
+        <div class="mb-10 text-center">
+          <p class="text-sm font-semibold uppercase tracking-[0.35em] text-accent">Why Choose Us</p>
+          <h2 class="mt-3 text-3xl font-black text-slate-900 sm:text-4xl">A team built for accountable growth</h2>
+        </div>
+
+        <div class="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+          <div class="rounded-3xl border border-slate-200 p-6 transition duration-300 hover:-translate-y-1 hover:border-primary">
+            <i class="fa-solid fa-database text-2xl text-primary"></i>
+            <h3 class="mt-4 text-xl font-bold">Data-driven strategy</h3>
+          </div>
+          <div class="rounded-3xl border border-slate-200 p-6 transition duration-300 hover:-translate-y-1 hover:border-primary">
+            <i class="fa-solid fa-bolt text-2xl text-primary"></i>
+            <h3 class="mt-4 text-xl font-bold">Fast communication</h3>
+          </div>
+          <div class="rounded-3xl border border-slate-200 p-6 transition duration-300 hover:-translate-y-1 hover:border-primary">
+            <i class="fa-solid fa-file-chart-column text-2xl text-primary"></i>
+            <h3 class="mt-4 text-xl font-bold">Transparent reporting</h3>
+          </div>
+          <div class="rounded-3xl border border-slate-200 p-6 transition duration-300 hover:-translate-y-1 hover:border-primary">
+            <i class="fa-solid fa-crosshairs text-2xl text-primary"></i>
+            <h3 class="mt-4 text-xl font-bold">Performance-focused campaigns</h3>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="reviews" class="mx-auto max-w-7xl px-6 py-20 lg:px-8">
+      <div class="reveal mb-12 text-center">
+        <p class="text-sm font-semibold uppercase tracking-[0.35em] text-accent">Reviews</p>
+        <h2 class="mt-3 text-3xl font-black text-slate-900 sm:text-4xl">What clients say</h2>
+      </div>
+
+      <div class="grid gap-6 lg:grid-cols-3">
+        <article class="reveal glass rounded-[1.75rem] p-6 shadow-soft transition duration-300 hover:-translate-y-2 hover:shadow-premium">
+          <div class="flex items-center gap-3">
+            <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-primary text-white font-bold">SM</div>
+            <div>
+              <h3 class="font-bold text-slate-900">Sarah Malik</h3>
+              <p class="text-sm text-slate-500">E-commerce Founder</p>
             </div>
+          </div>
+          <p class="mt-5 text-sm leading-7 text-slate-600">“Digiroxa helped us clean up our campaigns and the lead quality improved almost immediately.”</p>
+        </article>
+
+        <article class="reveal glass rounded-[1.75rem] p-6 shadow-soft transition duration-300 hover:-translate-y-2 hover:shadow-premium">
+          <div class="flex items-center gap-3">
+            <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-accent text-slate-900 font-bold">OK</div>
+            <div>
+              <h3 class="font-bold text-slate-900">Omar Khan</h3>
+              <p class="text-sm text-slate-500">Clinic Director</p>
+            </div>
+          </div>
+          <p class="mt-5 text-sm leading-7 text-slate-600">“The process was clear, fast, and focused on performance. We finally had reporting we could actually use.”</p>
+        </article>
+
+        <article class="reveal glass rounded-[1.75rem] p-6 shadow-soft transition duration-300 hover:-translate-y-2 hover:shadow-premium">
+          <div class="flex items-center gap-3">
+            <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-slate-900 text-white font-bold">LH</div>
+            <div>
+              <h3 class="font-bold text-slate-900">Layla Hassan</h3>
+              <p class="text-sm text-slate-500">Service Business Owner</p>
+            </div>
+          </div>
+          <p class="mt-5 text-sm leading-7 text-slate-600">“Everything felt more premium after working with Digiroxa, from the strategy to the messaging and conversions.”</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="audit" class="mx-auto max-w-7xl px-6 py-20 lg:px-8">
+      <div class="reveal rounded-[2rem] bg-primary p-8 text-white shadow-premium sm:p-10 lg:p-12">
+        <div class="grid gap-10 lg:grid-cols-[1fr_0.95fr]">
+          <div>
+            <p class="text-sm font-semibold uppercase tracking-[0.35em] text-blue-200">Free Audit</p>
+            <h2 class="mt-3 text-3xl font-black sm:text-4xl">Get Your Free Marketing Audit</h2>
+            <p class="mt-5 max-w-xl text-lg leading-8 text-blue-100/90">
+              We analyze your ads, website, and strategy to find growth opportunities.
+            </p>
+          </div>
+
+          <form id="auditForm" class="rounded-[1.75rem] bg-white p-6 text-slate-900 shadow-soft sm:p-8" novalidate>
+            <div class="space-y-4">
+              <div>
+                <label class="mb-2 block text-sm font-medium text-slate-700">Name</label>
+                <input type="text" name="name" class="w-full rounded-2xl border border-slate-200 px-4 py-3 outline-none transition focus:border-primary" placeholder="Your name" />
+              </div>
+              <div>
+                <label class="mb-2 block text-sm font-medium text-slate-700">Email</label>
+                <input type="email" name="email" class="w-full rounded-2xl border border-slate-200 px-4 py-3 outline-none transition focus:border-primary" placeholder="you@example.com" />
+              </div>
+              <div>
+                <label class="mb-2 block text-sm font-medium text-slate-700">Website</label>
+                <input type="text" name="website" class="w-full rounded-2xl border border-slate-200 px-4 py-3 outline-none transition focus:border-primary" placeholder="yourwebsite.com" />
+              </div>
+              <button type="submit" class="w-full rounded-full bg-accent px-6 py-4 text-sm font-semibold text-slate-900 transition duration-300 hover:-translate-y-1 hover:bg-amber-400">
+                Get Free Audit
+              </button>
+              <p class="form-message hidden rounded-2xl bg-emerald-50 px-4 py-3 text-sm text-emerald-700"></p>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="mx-auto max-w-7xl px-6 py-20 lg:px-8">
+      <div class="reveal rounded-[2rem] bg-white p-8 shadow-soft sm:p-10">
+        <div class="grid gap-10 lg:grid-cols-[1fr_0.95fr]">
+          <div>
+            <p class="text-sm font-semibold uppercase tracking-[0.35em] text-accent">Contact</p>
+            <h2 class="mt-3 text-3xl font-black text-slate-900 sm:text-4xl">Let’s talk about your growth goals</h2>
+            <p class="mt-5 max-w-xl text-lg leading-8 text-slate-600">
+              Reach out directly and speak with Digiroxa about ads, lead generation, SEO, and conversion strategy.
+            </p>
+            <div class="mt-8 flex flex-col gap-4 sm:flex-row">
+              <a href="tel:0527923850" class="inline-flex items-center justify-center rounded-full bg-primary px-6 py-4 text-sm font-semibold text-white shadow-premium transition duration-300 hover:-translate-y-1 hover:bg-blue-700">
+                Talk to an Agent
+              </a>
+            </div>
+          </div>
+
+          <div class="grid gap-4 text-sm">
+            <a href="tel:0527923850" class="flex items-center justify-between rounded-2xl border border-slate-200 bg-slate-50 p-4 transition hover:border-primary">
+              <span class="font-medium text-slate-600">Phone</span>
+              <span class="font-semibold text-slate-900">0527923850</span>
+            </a>
+            <a href="https://www.instagram.com/digiroxa" target="_blank" rel="noreferrer" class="flex items-center justify-between rounded-2xl border border-slate-200 bg-slate-50 p-4 transition hover:border-primary">
+              <span class="font-medium text-slate-600">Instagram</span>
+              <span class="font-semibold text-slate-900">@digiroxa</span>
+            </a>
+            <a href="https://www.tiktok.com/@digiroxa" target="_blank" rel="noreferrer" class="flex items-center justify-between rounded-2xl border border-slate-200 bg-slate-50 p-4 transition hover:border-primary">
+              <span class="font-medium text-slate-600">TikTok</span>
+              <span class="font-semibold text-slate-900">@digiroxa</span>
+            </a>
           </div>
         </div>
       </div>
     </section>
   </main>
 
-  <footer id="contact" class="mt-10 bg-primary text-white">
-    <div class="mx-auto grid max-w-7xl gap-10 px-6 py-16 lg:grid-cols-[1.1fr_0.9fr] lg:px-8">
+  <footer class="bg-slate-900 text-white">
+    <div class="mx-auto grid max-w-7xl gap-10 px-6 py-14 lg:grid-cols-[1fr_0.9fr_0.9fr] lg:px-8">
       <div>
-        <p class="text-sm font-semibold uppercase tracking-[0.35em] text-blue-200">Contact</p>
-        <h2 class="mt-3 text-3xl font-black sm:text-4xl">Let’s build your next growth chapter</h2>
-        <p class="mt-5 max-w-xl leading-8 text-blue-100/85">
-          Reach out directly and let’s talk about how Digiroxa can elevate your ads, traffic, leads, and online positioning.
+        <div class="flex items-center gap-3">
+          <div class="flex h-11 w-11 items-center justify-center rounded-2xl bg-primary text-white">
+            <span class="text-lg font-black">D</span>
+          </div>
+          <span class="text-xl font-bold tracking-wide">Digiroxa</span>
+        </div>
+        <p class="mt-4 max-w-sm text-sm leading-7 text-white/70">
+          Performance marketing that helps businesses generate real leads and revenue.
         </p>
+      </div>
 
-        <div class="mt-8 flex flex-col gap-4 sm:flex-row">
-          <a href="tel:0527923850" class="inline-flex items-center justify-center rounded-full bg-white px-6 py-4 text-sm font-semibold text-primary transition duration-300 hover:-translate-y-1 hover:bg-slate-100">
-            Call 0527923850
-          </a>
-          <a href="https://www.instagram.com/digiroxa" target="_blank" rel="noreferrer" class="inline-flex items-center justify-center rounded-full border border-white/20 px-6 py-4 text-sm font-semibold text-white transition duration-300 hover:-translate-y-1 hover:bg-white/10">
-            Contact an Agent
-          </a>
+      <div>
+        <h3 class="text-sm font-semibold uppercase tracking-[0.3em] text-white/50">Quick Links</h3>
+        <div class="mt-4 flex flex-col gap-3 text-sm text-white/75">
+          <a href="#home" class="transition hover:text-white">Home</a>
+          <a href="#services" class="transition hover:text-white">Services</a>
+          <a href="#results" class="transition hover:text-white">Results</a>
+          <a href="#reviews" class="transition hover:text-white">Reviews</a>
+          <a href="#contact" class="transition hover:text-white">Contact</a>
         </div>
       </div>
 
-      <div class="rounded-[2rem] border border-white/10 bg-white/10 p-6 backdrop-blur-sm sm:p-8">
-        <div class="mb-8 flex items-center gap-4">
-          <div class="flex h-14 w-14 items-center justify-center rounded-3xl bg-accent text-slate-900 shadow-lg">
-            <span class="text-xl font-black">DR</span>
-          </div>
-          <div>
-            <p class="text-xl font-semibold">Digiroxa</p>
-            <p class="text-sm text-blue-100/80">Premium Digital Marketing Agency</p>
-          </div>
-        </div>
-
-        <div class="space-y-4 text-sm">
-          <a href="tel:0527923850" class="flex items-center justify-between rounded-2xl border border-white/10 bg-white/10 p-4 transition hover:bg-white/15">
-            <span class="text-blue-100">Phone</span>
-            <span class="font-semibold text-white">0527923850</span>
+      <div>
+        <h3 class="text-sm font-semibold uppercase tracking-[0.3em] text-white/50">Connect</h3>
+        <div class="mt-4 space-y-4 text-sm text-white/75">
+          <a href="tel:0527923850" class="flex items-center gap-3 transition hover:text-white">
+            <i class="fa-solid fa-phone text-accent"></i>
+            <span>0527923850</span>
           </a>
-          <a href="https://www.instagram.com/digiroxa" target="_blank" rel="noreferrer" class="flex items-center justify-between rounded-2xl border border-white/10 bg-white/10 p-4 transition hover:bg-white/15">
-            <span class="text-blue-100">Instagram</span>
-            <span class="font-semibold text-white">@digiroxa</span>
+          <a href="https://www.instagram.com/digiroxa" target="_blank" rel="noreferrer" class="flex items-center gap-3 transition hover:text-white">
+            <i class="fa-brands fa-instagram text-accent"></i>
+            <span>Instagram</span>
           </a>
-          <a href="https://www.tiktok.com/@digiroxa" target="_blank" rel="noreferrer" class="flex items-center justify-between rounded-2xl border border-white/10 bg-white/10 p-4 transition hover:bg-white/15">
-            <span class="text-blue-100">TikTok</span>
-            <span class="font-semibold text-white">@digiroxa</span>
+          <a href="https://www.tiktok.com/@digiroxa" target="_blank" rel="noreferrer" class="flex items-center gap-3 transition hover:text-white">
+            <i class="fa-brands fa-tiktok text-accent"></i>
+            <span>TikTok</span>
           </a>
         </div>
       </div>
     </div>
 
     <div class="border-t border-white/10">
-      <div class="mx-auto flex max-w-7xl flex-col gap-4 px-6 py-6 text-sm text-blue-100/80 md:flex-row md:items-center md:justify-between lg:px-8">
+      <div class="mx-auto flex max-w-7xl flex-col gap-4 px-6 py-6 text-sm text-white/60 md:flex-row md:items-center md:justify-between lg:px-8">
         <p>&copy; 2026 Digiroxa. All rights reserved.</p>
-        <div class="flex flex-wrap items-center gap-5">
-          <a href="https://www.instagram.com/digiroxa" target="_blank" rel="noreferrer" class="transition hover:text-white">Instagram</a>
-          <a href="https://www.tiktok.com/@digiroxa" target="_blank" rel="noreferrer" class="transition hover:text-white">TikTok</a>
-          <a href="tel:0527923850" class="transition hover:text-white">0527923850</a>
-        </div>
+        <p>Built for growth-focused businesses.</p>
       </div>
     </div>
   </footer>
@@ -443,13 +578,92 @@
     const menuBtn = document.getElementById("menuBtn");
     const mobileMenu = document.getElementById("mobileMenu");
 
-    menuBtn.addEventListener("click", () => {
-      mobileMenu.classList.toggle("hidden");
-    });
+    if (menuBtn && mobileMenu) {
+      menuBtn.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+      });
 
-    mobileMenu.querySelectorAll("a").forEach((link) => {
-      link.addEventListener("click", () => mobileMenu.classList.add("hidden"));
-    });
+      mobileMenu.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", () => mobileMenu.classList.add("hidden"));
+      });
+    }
+
+    const revealItems = document.querySelectorAll(".reveal");
+    if ("IntersectionObserver" in window) {
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("is-visible");
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.12 }
+      );
+      revealItems.forEach((item) => observer.observe(item));
+    } else {
+      revealItems.forEach((item) => item.classList.add("is-visible"));
+    }
+
+    function setupFormValidation(formId, fields) {
+      const form = document.getElementById(formId);
+      if (!form) return;
+
+      const message = form.querySelector(".form-message");
+
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+
+        let valid = true;
+
+        fields.forEach((field) => {
+          const input = form.querySelector(`[name="${field.name}"]`);
+          const value = input.value.trim();
+
+          input.classList.remove("border-red-500");
+
+          if (!value) {
+            valid = false;
+            input.classList.add("border-red-500");
+            return;
+          }
+
+          if (field.type === "email") {
+            const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
+            if (!emailOk) {
+              valid = false;
+              input.classList.add("border-red-500");
+            }
+          }
+        });
+
+        if (!valid) {
+          message.textContent = "Please complete all fields correctly.";
+          message.classList.remove("hidden", "bg-emerald-50", "text-emerald-700");
+          message.classList.add("bg-red-50", "text-red-700");
+          return;
+        }
+
+        message.textContent = "Thanks! Your request is ready to be submitted.";
+        message.classList.remove("hidden", "bg-red-50", "text-red-700");
+        message.classList.add("bg-emerald-50", "text-emerald-700");
+        form.reset();
+      });
+    }
+
+    setupFormValidation("heroForm", [
+      { name: "name" },
+      { name: "email", type: "email" },
+      { name: "business" },
+    ]);
+
+    setupFormValidation("auditForm", [
+      { name: "name" },
+      { name: "email", type: "email" },
+      { name: "website" },
+    ]);
   </script>
 </body>
 </html>
+

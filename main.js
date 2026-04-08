@@ -1,23 +1,23 @@
-const menuButton = document.getElementById("menuButton");
+const menuBtn = document.getElementById("menuBtn");
 const mobileMenu = document.getElementById("mobileMenu");
 
-if (menuButton && mobileMenu) {
-  menuButton.addEventListener("click", () => {
+if (menuBtn && mobileMenu) {
+  menuBtn.addEventListener("click", () => {
     const isHidden = mobileMenu.classList.toggle("hidden");
-    menuButton.setAttribute("aria-expanded", String(!isHidden));
+    menuBtn.setAttribute("aria-expanded", String(!isHidden));
   });
 
   mobileMenu.querySelectorAll("a").forEach((link) => {
     link.addEventListener("click", () => {
       mobileMenu.classList.add("hidden");
-      menuButton.setAttribute("aria-expanded", "false");
+      menuBtn.setAttribute("aria-expanded", "false");
     });
   });
 }
 
-const revealElements = document.querySelectorAll(".reveal");
+const revealItems = document.querySelectorAll(".reveal");
 
-if ("IntersectionObserver" in window && revealElements.length) {
+if ("IntersectionObserver" in window && revealItems.length) {
   const observer = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
@@ -28,12 +28,12 @@ if ("IntersectionObserver" in window && revealElements.length) {
       });
     },
     {
-      threshold: 0.14,
-      rootMargin: "0px 0px -40px 0px",
+      threshold: 0.12,
+      rootMargin: "0px 0px -30px 0px",
     }
   );
 
-  revealElements.forEach((element) => observer.observe(element));
+  revealItems.forEach((item) => observer.observe(item));
 } else {
-  revealElements.forEach((element) => element.classList.add("is-visible"));
+  revealItems.forEach((item) => item.classList.add("is-visible"));
 }
