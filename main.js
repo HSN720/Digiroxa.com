@@ -68,3 +68,141 @@ document.querySelectorAll(".validate-form").forEach((form) => {
     form.reset();
   });
 });
+
+document.querySelectorAll("[data-testimonial-carousel]").forEach((carousel) => {
+  const track = carousel.querySelector("[data-carousel-track]");
+  const originalSlides = Array.from(track?.children || []);
+  if (!track || originalSlides.length < 2) return;
+
+  let visibleCount = window.matchMedia("(min-width: 1024px)").matches ? 3 : 1;
+  let index = visibleCount;
+  let autoTimer = null;
+  let startX = 0;
+  let currentX = 0;
+  let startTranslate = 0;
+  let isDragging = false;
+  let resizeTimer = null;
+
+  const getCardWidth = () => {
+    const firstCard = track.children[0];
+    return firstCard ? firstCard.getBoundingClientRect().width : 0;
+  };
+
+  const updatePosition = (animate = true) => {
+    const width = getCardWidth();
+    track.style.transition = animate ? "transform .55s ease" : "none";
+    track.style.transform = `translateX(-${index * width}px)`;
+  };
+
+  const rebuildTrack = () => {
+    visibleCount = window.matchMedia("(min-width: 1024px)").matches ? 3 : 1;
+    track.innerHTML = "";
+
+    const prepend = originalSlides.slice(-visibleCount).map((slide) => {
+      const clone = slide.cloneNode(true);
+      clone.dataset.clone = "true";
+      return clone;
+    });
+
+    const append = originalSlides.slice(0, visibleCount).map((slide) => {
+      const clone = slide.cloneNode(true);
+      clone.dataset.clone = "true";
+      return clone;
+    });
+
+    [...prepend, ...originalSlides.map((slide) => slide.cloneNode(true)), ...append].forEach((slide) => {
+      track.appendChild(slide);
+    });
+
+    index = visibleCount;
+    updatePosition(false);
+  };
+
+  const setSlide = (nextIndex, animate = true) => {
+    index = nextIndex;
+    updatePosition(animate);
+  };
+
+  const startAuto = () => {
+    clearInterval(autoTimer);
+    autoTimer = setInterval(() => setSlide(index + visibleCount), 3500);
+  };
+
+  const stopAuto = () => {
+    clearInterval(autoTimer);
+  };
+
+  const pointerDown = (clientX) => {
+    isDragging = true;
+    startX = clientX;
+    currentX = clientX;
+    startTranslate = -index * getCardWidth();
+    stopAuto();
+    track.style.transition = "none";
+  };
+
+  const pointerMove = (clientX) => {
+    if (!isDragging) return;
+    currentX = clientX;
+    const delta = currentX - startX;
+    track.style.transform = `translateX(${startTranslate + delta}px)`;
+  };
+
+  const pointerUp = () => {
+    if (!isDragging) return;
+    isDragging = false;
+    const delta = currentX - startX;
+    if (Math.abs(delta) > 60) {
+      setSlide(index + (delta < 0 ? visibleCount : -visibleCount));
+    } else {
+      setSlide(index);
+    }
+    startAuto();
+  };
+
+  track.addEventListener("transitionend", () => {
+    const totalRealSlides = originalSlides.length;
+    if (index >= totalRealSlides + visibleCount) {
+      index = visibleCount;
+      updatePosition(false);
+    } else if (index < visibleCount) {
+      index = totalRealSlides;
+      updatePosition(false);
+    }
+  });
+
+  carousel.addEventListener("mouseenter", stopAuto);
+  carousel.addEventListener("mouseleave", startAuto);
+
+  carousel.addEventListener("touchstart", (event) => {
+    pointerDown(event.touches[0].clientX);
+  }, { passive: true });
+
+  carousel.addEventListener("touchmove", (event) => {
+    pointerMove(event.touches[0].clientX);
+  }, { passive: true });
+
+  carousel.addEventListener("touchend", pointerUp);
+
+  carousel.addEventListener("mousedown", (event) => {
+    pointerDown(event.clientX);
+  });
+
+  window.addEventListener("mousemove", (event) => {
+    pointerMove(event.clientX);
+  });
+
+  window.addEventListener("mouseup", pointerUp);
+
+  window.addEventListener("resize", () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(() => {
+      stopAuto();
+      rebuildTrack();
+      startAuto();
+    }, 120);
+  });
+
+  rebuildTrack();
+  startAuto();
+});
