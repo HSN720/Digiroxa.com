@@ -1,34 +1,85 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Free Audit | Digiroxa</title>
-  <meta name="description" content="Request a free Digiroxa marketing audit. We review your ads, website, tracking, and growth strategy for practical lead-generation opportunities." />
+
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Sora:wght@700;800&display=swap" rel="stylesheet"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
-  <script>tailwind.config={theme:{extend:{colors:{primary:"#1D4ED8",accent:"#F59E0B",surface:"#F3F4F6",ink:"#0F172A"},boxShadow:{premium:"0 24px 80px rgba(29,78,216,0.14)",soft:"0 12px 40px rgba(15,23,42,0.08)"}}}}};</script>
-  <style>html{scroll-behavior:smooth}body{background:radial-gradient(circle at top left, rgba(29,78,216,0.10), transparent 24%),radial-gradient(circle at bottom right, rgba(245,158,11,0.08), transparent 22%),#fff;background-repeat:no-repeat,no-repeat;background-size:auto,auto}.glass{background:rgba(255,255,255,.78);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.72)}.reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}.reveal.is-visible{opacity:1;transform:translateY(0)}.brand-mark{font-family:"Poppins",ui-sans-serif,system-ui,sans-serif;font-weight:700;letter-spacing:.04em;color:#1D4ED8}.brand-mark-header{font-family:"Sora",ui-sans-serif,system-ui,sans-serif;font-weight:800;letter-spacing:.1em;text-transform:uppercase;background:linear-gradient(135deg,#1D4ED8 0%,#2563EB 55%,#0F172A 100%);-webkit-background-clip:text;background-clip:text;color:transparent}</style>
+
+  <style>
+    body {
+      background: #f3f4f6;
+      font-family: Arial, sans-serif;
+    }
+  </style>
 </head>
-<body class="bg-surface text-ink antialiased">
-  <header class="sticky top-0 z-50 border-b border-slate-200/80 bg-white/80 backdrop-blur-xl"><div class="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8"><a href="index.html" class="flex items-center"><span class="brand-mark brand-mark-header text-xl font-bold tracking-wide">DIGIROXA</span></a><nav class="hidden items-center gap-8 md:flex"><a href="index.html" class="text-sm font-medium text-slate-600 transition hover:text-primary">Home</a><div class="group relative"><a href="services.html" class="inline-flex items-center gap-2 text-sm font-medium text-slate-600 transition hover:text-primary">Services <i class="fa-solid fa-chevron-down text-[10px]"></i></a><div class="invisible absolute left-0 top-full z-50 mt-3 w-64 translate-y-2 rounded-2xl border border-slate-200 bg-white/95 p-2 opacity-0 shadow-soft backdrop-blur-xl transition-all duration-200 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100 group-focus-within:visible group-focus-within:translate-y-0 group-focus-within:opacity-100"><a href="meta-ads.html" class="block rounded-xl px-4 py-3 text-sm text-slate-600 transition hover:bg-slate-50 hover:text-primary">Meta Ads</a><a href="google-ads.html" class="block rounded-xl px-4 py-3 text-sm text-slate-600 transition hover:bg-slate-50 hover:text-primary">Google Ads Setup and Management</a><a href="tiktok-ads.html" class="block rounded-xl px-4 py-3 text-sm text-slate-600 transition hover:bg-slate-50 hover:text-primary">TikTok Ads</a><a href="seo.html" class="block rounded-xl px-4 py-3 text-sm text-slate-600 transition hover:bg-slate-50 hover:text-primary">SEO</a><a href="lead-generation.html" class="block rounded-xl px-4 py-3 text-sm text-slate-600 transition hover:bg-slate-50 hover:text-primary">Lead Generation</a><a href="conversion-optimization.html" class="block rounded-xl px-4 py-3 text-sm text-slate-600 transition hover:bg-slate-50 hover:text-primary">Conversion Optimization</a></div></div><a href="pricing.html" class="text-sm font-medium text-slate-600 transition hover:text-primary">Pricing</a><a href="results.html" class="text-sm font-medium text-slate-600 transition hover:text-primary">Results</a><a href="about.html" class="text-sm font-medium text-slate-600 transition hover:text-primary">About</a><a href="contact.html" class="text-sm font-medium text-slate-600 transition hover:text-primary">Contact</a></nav><div class="hidden md:block"><a href="audit.html" class="rounded-full bg-primary px-5 py-3 text-sm font-semibold text-white shadow-premium transition duration-300 hover:-translate-y-0.5 hover:bg-blue-700">Free Audit</a></div><button id="menuBtn" class="inline-flex h-11 w-11 items-center justify-center rounded-xl border border-slate-200 bg-white md:hidden" aria-label="Open Menu" aria-expanded="false"><i class="fa-solid fa-bars"></i></button></div><div id="mobileMenu" class="hidden border-t border-slate-200 bg-white md:hidden"><div class="mx-auto flex max-w-7xl flex-col gap-4 px-6 py-5"><a href="index.html">Home</a><button type="button" data-services-toggle class="flex items-center justify-between text-left text-slate-700"><span>Services</span><i class="fa-solid fa-chevron-down text-xs transition-transform" data-services-icon></i></button><div data-services-panel class="hidden flex flex-col gap-2 pl-4"><a href="meta-ads.html" class="text-sm text-slate-600">Meta Ads</a><a href="google-ads.html" class="text-sm text-slate-600">Google Ads Setup and Management</a><a href="tiktok-ads.html" class="text-sm text-slate-600">TikTok Ads</a><a href="seo.html" class="text-sm text-slate-600">SEO</a><a href="lead-generation.html" class="text-sm text-slate-600">Lead Generation</a><a href="conversion-optimization.html" class="text-sm text-slate-600">Conversion Optimization</a></div><a href="pricing.html">Pricing</a><a href="results.html">Results</a><a href="about.html">About</a><a href="contact.html">Contact</a><a href="audit.html" class="inline-flex w-fit rounded-full bg-primary px-5 py-3 text-sm font-semibold text-white">Free Audit</a></div></div></header>
-  <main class="mx-auto max-w-7xl px-6 py-20 lg:px-8">
-    <section class="reveal grid gap-10 lg:grid-cols-[1fr_0.95fr]"><div><p class="text-sm font-semibold uppercase tracking-[0.35em] text-accent">Free Audit</p><h1 class="mt-4 text-5xl font-black text-slate-900 sm:text-6xl">Get a Free Marketing Audit &amp; Discover Hidden Growth Opportunities</h1><p class="mt-6 max-w-3xl text-lg leading-8 text-slate-600">We analyze your ads, website, and strategy to find what's costing you leads and how to fix it.</p><div class="mt-8 rounded-[1.5rem] bg-slate-50 p-6"><p class="text-sm font-semibold uppercase tracking-[0.28em] text-accent">What You'll Get</p><div class="mt-5 space-y-4 text-slate-600"><p><i class="fa-solid fa-check mr-3 text-primary"></i>Full ads audit (Meta, Google, TikTok)</p><p><i class="fa-solid fa-check mr-3 text-primary"></i>Website conversion analysis</p><p><i class="fa-solid fa-check mr-3 text-primary"></i>Lead generation gaps</p><p><i class="fa-solid fa-check mr-3 text-primary"></i>Action plan to improve ROI</p></div></div><p class="mt-8 max-w-2xl text-sm leading-7 text-slate-500">Helping brands generate more leads, improve conversion performance, and scale profitably.</p></div><div class="reveal glass rounded-[2rem] p-8 shadow-soft"><h2 class="text-2xl font-bold">Request your audit</h2><form class="validate-form mt-6 space-y-4" data-success="Thanks! Your audit request is ready to be reviewed." novalidate><div><label class="mb-2 block text-sm font-medium text-slate-700">Name</label><input type="text" name="name" class="w-full rounded-2xl border border-slate-200 px-4 py-3 outline-none transition focus:border-primary" /></div><div><label class="mb-2 block text-sm font-medium text-slate-700">Email</label><input type="email" name="email" class="w-full rounded-2xl border border-slate-200 px-4 py-3 outline-none transition focus:border-primary" /></div><div><label class="mb-2 block text-sm font-medium text-slate-700">Business / Website</label><input type="text" name="website" class="w-full rounded-2xl border border-slate-200 px-4 py-3 outline-none transition focus:border-primary" /></div><button type="submit" class="w-full rounded-full bg-primary px-6 py-4 text-sm font-semibold text-white shadow-premium transition hover:-translate-y-1 hover:bg-blue-700">Get My Free Audit</button><p class="text-center text-sm leading-6 text-slate-500">You'll receive your audit within 24-48 hours.</p><p class="text-center text-sm leading-6 text-slate-600">Prefer to talk directly? <a href="contact.html" class="font-semibold text-primary transition hover:text-blue-700">Contact us</a></p><p class="form-message hidden rounded-2xl px-4 py-3 text-sm"></p></form></div></section>
+
+<body>
+
+  <!-- HEADER -->
+  <header style="padding:20px;background:white;border-bottom:1px solid #ddd;">
+    <h1 style="font-weight:bold;">DIGIROXA</h1>
+  </header>
+
+  <!-- MAIN -->
+  <main style="max-width:900px;margin:auto;padding:40px;">
+
+    <h2 style="font-size:32px;font-weight:800;">Get a Free Marketing Audit</h2>
+    <p style="margin-top:10px;color:#555;">
+      We analyze your ads, website, and strategy to find what's costing you leads.
+    </p>
+
+    <!-- FORM (100% WORKING) -->
+    <div style="background:white;padding:25px;margin-top:30px;border-radius:12px;">
+
+      <form action="https://formspree.io/f/xwvavnoj" method="POST">
+
+        <input
+          type="text"
+          name="name"
+          placeholder="Name"
+          required
+          style="width:100%;padding:12px;margin-bottom:12px;border:1px solid #ccc;border-radius:8px;"
+        />
+
+        <input
+          type="email"
+          name="email"
+          placeholder="Email"
+          required
+          style="width:100%;padding:12px;margin-bottom:12px;border:1px solid #ccc;border-radius:8px;"
+        />
+
+        <input
+          type="text"
+          name="business"
+          placeholder="Business Name"
+          required
+          style="width:100%;padding:12px;margin-bottom:12px;border:1px solid #ccc;border-radius:8px;"
+        />
+
+        <button
+          type="submit"
+          style="width:100%;padding:12px;background:#1D4ED8;color:white;border:none;border-radius:8px;font-weight:bold;"
+        >
+          Get My Free Audit
+        </button>
+
+      </form>
+
+      <p style="font-size:12px;color:#777;margin-top:15px;">
+        You'll receive your audit within 24–48 hours.
+      </p>
+
+    </div>
+
   </main>
-  <footer class="bg-slate-900 text-white"><div class="mx-auto grid max-w-7xl gap-10 px-6 py-14 lg:grid-cols-[1fr_0.9fr_0.9fr] lg:px-8"><div><div class="flex items-center"><span class="brand-mark text-xl font-bold tracking-wide">Digiroxa</span></div><p class="mt-4 max-w-sm text-sm leading-7 text-white/70">Digiroxa is a performance-driven, data-backed, results-focused agency built around qualified leads, stronger conversions, and practical growth strategy.</p></div><div><h3 class="text-sm font-semibold uppercase tracking-[0.3em] text-white/50">Services Links</h3><div class="mt-4 flex flex-col gap-3 text-sm text-white/75"><a href="services.html">Services Overview</a><a href="meta-ads.html">Meta Ads</a><a href="google-ads.html">Google Ads</a><a href="seo.html">SEO</a><a href="pricing.html">Pricing</a><a href="audit.html">Free Audit</a></div></div><div><h3 class="text-sm font-semibold uppercase tracking-[0.3em] text-white/50">Contact Info</h3><div class="mt-4 space-y-4 text-sm text-white/75"><a href="https://wa.me/971527923850" target="_blank" rel="noreferrer" class="flex items-center gap-3"><i class="fa-solid fa-phone text-accent"></i><span>+971 52 792 3850</span></a><a href="https://www.instagram.com/digiroxa" target="_blank" rel="noreferrer" class="flex items-center gap-3"><i class="fa-brands fa-instagram text-accent"></i><span>Instagram</span></a><a href="https://www.tiktok.com/@digiroxa" target="_blank" rel="noreferrer" class="flex items-center gap-3"><i class="fa-brands fa-tiktok text-accent"></i><span>TikTok</span></a></div></div></div><div class="border-t border-white/10"><div class="mx-auto flex max-w-7xl flex-col gap-4 px-6 py-6 text-sm text-white/60 md:flex-row md:items-center md:justify-between lg:px-8"><p>&copy; 2026 Digiroxa. All rights reserved.</p><p>Built for growth-focused businesses.</p></div></div></footer>
-  <script src="main.js"></script>
+
+  <!-- FOOTER -->
+  <footer style="text-align:center;padding:30px;background:#111;color:white;margin-top:50px;">
+    Digiroxa © 2026
+  </footer>
+
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
