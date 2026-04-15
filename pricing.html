@@ -4,8 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Plans | Digiroxa</title>
+  <meta name="description" content="Explore Digiroxa growth plans for businesses, including Starter, Growth, Premium, and a full all-in-one marketing package." />
 
   <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
 
   <script>
     tailwind.config = {
@@ -16,6 +18,10 @@
             accent: "#F59E0B",
             surface: "#F3F4F6",
             ink: "#0F172A"
+          },
+          boxShadow: {
+            premium: "0 24px 80px rgba(29,78,216,0.14)",
+            soft: "0 12px 40px rgba(15,23,42,0.08)"
           }
         }
       }
@@ -23,12 +29,42 @@
   </script>
 
   <style>
-    body { background:#F3F4F6; }
+    html { scroll-behavior: smooth; }
+    body { background: radial-gradient(circle at top left, rgba(29,78,216,0.10), transparent 24%), radial-gradient(circle at bottom right, rgba(245,158,11,0.08), transparent 22%), #fff; background-repeat: no-repeat, no-repeat; background-size: auto, auto; }
     .plan-card { position:relative; z-index:10; }
   </style>
 </head>
 
-<body class="text-ink">
+<body class="bg-surface text-ink antialiased">
+
+<header class="sticky top-0 border-b border-slate-200/80 bg-white/80 backdrop-blur-xl" style="position: sticky; top: 0; z-index: 9999;">
+  <div class="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8">
+    <a href="index.html" class="flex items-center"><span class="text-xl font-bold tracking-wide">Digiroxa</span></a>
+    <nav class="hidden items-center gap-8 md:flex">
+      <a href="index.html" class="text-sm font-medium text-slate-600 transition hover:text-primary">Home</a>
+      <a href="services.html" class="text-sm font-medium text-slate-600 transition hover:text-primary">Services</a>
+      <a href="pricing.html" class="text-sm font-semibold text-primary">Pricing</a>
+      <a href="results.html" class="text-sm font-medium text-slate-600 transition hover:text-primary">Results</a>
+      <a href="about.html" class="text-sm font-medium text-slate-600 transition hover:text-primary">About</a>
+      <a href="contact.html" class="text-sm font-medium text-slate-600 transition hover:text-primary">Contact</a>
+    </nav>
+    <div class="hidden md:block">
+      <a href="audit.html" class="rounded-full bg-primary px-5 py-3 text-sm font-semibold text-white shadow-premium transition duration-300 hover:-translate-y-0.5 hover:bg-blue-700">Free Audit</a>
+    </div>
+    <button id="menuBtn" class="inline-flex h-11 w-11 items-center justify-center rounded-xl border border-slate-200 bg-white md:hidden" aria-label="Open Menu" aria-expanded="false"><i class="fa-solid fa-bars"></i></button>
+  </div>
+  <div id="mobileMenu" class="hidden border-t border-slate-200 bg-white md:hidden">
+    <div class="mx-auto flex max-w-7xl flex-col gap-4 px-6 py-5">
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="results.html">Results</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="audit.html" class="inline-flex w-fit rounded-full bg-primary px-5 py-3 text-sm font-semibold text-white">Free Audit</a>
+    </div>
+  </div>
+</header>
 
 <main class="mx-auto max-w-7xl px-6 py-20">
 
@@ -36,7 +72,7 @@
   <section class="text-center">
     <h1 class="text-5xl font-black">Choose your growth plan</h1>
     <p class="mt-6 text-lg text-slate-600">
-      Simple, clear plans built to grow your business.
+      Simple, clear plans built around paid ads, SEO, lead generation, and conversion tracking.
     </p>
   </section>
 
@@ -46,6 +82,20 @@
     <!-- STARTER -->
     <div class="plan-card rounded-3xl bg-white p-8 shadow">
       <h2 class="text-2xl font-bold">Starter</h2>
+      <p class="mt-3 text-3xl font-black text-slate-900">$100 <span class="text-base font-medium text-slate-500">/ month</span></p>
+      <p class="mt-4 text-slate-600">
+        A simple plan for businesses that want one ad platform set up properly and checked weekly.
+      </p>
+      <ul class="mt-6 space-y-3 text-slate-600">
+        <li>1 platform setup: Google Ads or Meta Ads</li>
+        <li>Basic campaign setup and targeting</li>
+        <li>Simple keyword or audience research</li>
+        <li>Basic tracking setup</li>
+        <li>Weekly performance check</li>
+      </ul>
+      <p class="mt-6 text-sm text-slate-500">
+        Good for getting started with a clean setup and clear next steps.
+      </p>
 
       <a href="audit.html"
          class="mt-8 block w-full text-center rounded-full border px-6 py-4 font-semibold hover:scale-105 transition">
@@ -58,6 +108,21 @@
 
       <p class="text-primary font-semibold">Most Popular</p>
       <h2 class="text-3xl font-black mt-2">Growth</h2>
+      <p class="mt-3 text-3xl font-black text-slate-900">$300 <span class="text-base font-medium text-slate-500">/ month</span></p>
+      <p class="mt-4 text-slate-600">
+        A stronger plan for businesses that need both lead generation and ongoing weekly campaign support.
+      </p>
+      <ul class="mt-6 space-y-3 text-slate-600">
+        <li>Google Ads + Meta Ads management</li>
+        <li>Campaign setup and weekly improvements</li>
+        <li>Audience research + retargeting setup</li>
+        <li>Basic SEO improvements</li>
+        <li>Conversion tracking setup</li>
+        <li>Weekly reporting</li>
+      </ul>
+      <p class="mt-6 text-sm text-slate-500">
+        Best for businesses that want more leads, better tracking, and clearer campaign performance.
+      </p>
 
       <!-- ✅ FIXED BUTTON -->
       <div style="position:relative; z-index:50;">
@@ -73,6 +138,21 @@
     <!-- PREMIUM -->
     <div class="plan-card rounded-3xl bg-white p-8 shadow">
       <h2 class="text-2xl font-bold">Premium</h2>
+      <p class="mt-3 text-3xl font-black text-slate-900">$500 <span class="text-base font-medium text-slate-500">/ month</span></p>
+      <p class="mt-4 text-slate-600">
+        Full monthly support for businesses that want ads, SEO, funnel tracking, and lead flow managed together.
+      </p>
+      <ul class="mt-6 space-y-3 text-slate-600">
+        <li>Full Google Ads + Meta Ads + SEO management</li>
+        <li>Funnel setup from ads to landing page to conversion</li>
+        <li>Advanced keyword and audience strategy</li>
+        <li>Continuous campaign improvement</li>
+        <li>Lead tracking and performance improvement</li>
+        <li>Strategy updates and scaling support</li>
+      </ul>
+      <p class="mt-6 text-sm text-slate-500">
+        Built for businesses that want stronger lead quality and a more complete growth system.
+      </p>
 
       <a href="contact.html"
          class="mt-8 block w-full text-center rounded-full border px-6 py-4 font-semibold hover:scale-105 transition">
@@ -86,6 +166,20 @@
   <section class="mt-16 rounded-3xl bg-slate-900 p-10 text-white">
 
     <h2 class="text-3xl font-black">Everything under one growth system</h2>
+    <p class="mt-3 text-3xl font-black text-white">$999 <span class="text-base font-medium text-white/70">/ month</span></p>
+    <p class="mt-5 max-w-3xl text-lg leading-8 text-white/80">
+      This is a complete end-to-end marketing system where Google Ads, Meta Ads, SEO, lead generation, conversion tracking, and funnel work are all managed together under one strategy.
+    </p>
+    <p class="mt-4 max-w-3xl text-base leading-7 text-white/70">
+      Everything is connected and handled as one system, so there is no need to juggle multiple agencies or freelancers. The focus stays on consistent leads, stronger conversions, and steady scaling.
+    </p>
+    <ul class="mt-6 space-y-3 text-white/80">
+      <li>Google Ads management</li>
+      <li>Meta Ads for Facebook and Instagram</li>
+      <li>SEO strategy and execution</li>
+      <li>Lead generation systems</li>
+      <li>Conversion tracking and funnel optimization</li>
+    </ul>
 
     <!-- ✅ FIXED BUTTON -->
     <div style="position:relative; z-index:50;">
@@ -100,5 +194,44 @@
 
 </main>
 
+<footer class="bg-slate-900 text-white">
+  <div class="mx-auto grid max-w-7xl gap-10 px-6 py-14 lg:grid-cols-[1fr_0.9fr_0.9fr] lg:px-8">
+    <div>
+      <div class="flex items-center"><span class="text-xl font-bold tracking-wide">Digiroxa</span></div>
+      <p class="mt-4 max-w-sm text-sm leading-7 text-white/70">Digiroxa is a performance-driven, data-backed, results-focused agency built around qualified leads, stronger conversions, and practical growth strategy.</p>
+    </div>
+    <div>
+      <h3 class="text-sm font-semibold uppercase tracking-[0.3em] text-white/50">Services Links</h3>
+      <div class="mt-4 flex flex-col gap-3 text-sm text-white/75">
+        <a href="services.html">Services Overview</a>
+        <a href="meta-ads.html">Meta Ads</a>
+        <a href="google-ads.html">Google Ads</a>
+        <a href="seo.html">SEO</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="audit.html">Free Audit</a>
+      </div>
+    </div>
+    <div>
+      <h3 class="text-sm font-semibold uppercase tracking-[0.3em] text-white/50">Contact Info</h3>
+      <div class="mt-4 space-y-4 text-sm text-white/75">
+        <a href="tel:0527923850" class="flex items-center gap-3"><i class="fa-solid fa-phone text-accent"></i><span>0527923850</span></a>
+        <a href="https://www.instagram.com/digiroxa" target="_blank" rel="noreferrer" class="flex items-center gap-3"><i class="fa-brands fa-instagram text-accent"></i><span>Instagram</span></a>
+        <a href="https://www.tiktok.com/@digiroxa" target="_blank" rel="noreferrer" class="flex items-center gap-3"><i class="fa-brands fa-tiktok text-accent"></i><span>TikTok</span></a>
+      </div>
+    </div>
+  </div>
+  <div class="border-t border-white/10">
+    <div class="mx-auto flex max-w-7xl flex-col gap-4 px-6 py-6 text-sm text-white/60 md:flex-row md:items-center md:justify-between lg:px-8">
+      <p>&copy; 2026 Digiroxa. All rights reserved.</p>
+      <p>Built for growth-focused businesses.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="main.js"></script>
+
 </body>
 </html>
+
+
+
