@@ -15,6 +15,24 @@ if (menuBtn && mobileMenu) {
   });
 }
 
+document.querySelectorAll("[data-services-toggle]").forEach((button) => {
+  const panel = button.nextElementSibling;
+  const icon = button.querySelector("[data-services-icon]");
+
+  if (!panel || !panel.hasAttribute("data-services-panel")) return;
+
+  button.setAttribute("aria-expanded", "false");
+
+  button.addEventListener("click", () => {
+    const hidden = panel.classList.toggle("hidden");
+    button.setAttribute("aria-expanded", String(!hidden));
+
+    if (icon) {
+      icon.classList.toggle("rotate-180", !hidden);
+    }
+  });
+});
+
 const revealItems = document.querySelectorAll(".reveal");
 if ("IntersectionObserver" in window && revealItems.length) {
   const observer = new IntersectionObserver(
